@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import CmsLayout from "./Cms/CmsLayout";
-import Allproducts from "./Cms/Pages/Products/Allproducts";
-import ProductCategories from "./Cms/Pages/Products/ProductCategories";
-import ProductBrands from "./Cms/Pages/Products/ProductBrands";
-import HeroBanner from "./Cms/Pages/AdsAndPromo/HeroBanner";
-import BrandPromo from "./Cms/Pages/AdsAndPromo/BrandPromo";
-import PromoPoster from "./Cms/Pages/AdsAndPromo/PromoPoster";
-import BannerCategory from "./Cms/Pages/AdsAndPromo/BannerCategory";
+import Allproducts from "./Cms/Pages/Products/AllProducts/Allproducts";
+import ProductCategories from "./Cms/Pages/Products/ProductCategory/ProductCategories";
+import ProductBrands from "./Cms/Pages/Products/ProductBrands/ProductBrands";
+import HeroBanner from "./Cms/Pages/AdsAndPromo/HeroBanner/HeroBanner";
+import BrandPromo from "./Cms/Pages/AdsAndPromo/BrandPromo/BrandPromo";
+import PromoPoster from "./Cms/Pages/AdsAndPromo/PromoPoster/PromoPoster";
+import BannerCategory from "./Cms/Pages/AdsAndPromo/BannerCategory/BannerCategory";
 import LoginPage from "./Cms/Pages/Signup/LoginPage";
 
 function App() {
