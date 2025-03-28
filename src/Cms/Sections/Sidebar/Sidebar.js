@@ -14,10 +14,10 @@ function Sidebar() {
   const menuItem = [
     {
       name: "Products",
-      path: "/products/allproducts",
+      path: "/products",
       img: sidebarImg,
       subItems: [
-        { name: "All products", path: "/products/allproducts" },
+        { name: "All products", path: "/products" },
         { name: "Categories", path: "/products/categories" },
         { name: "Brands", path: "/products/brands" },
       ],

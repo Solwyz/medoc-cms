@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<CmsLayout />}>
           <Route index element={<Allproducts/>} />
           <Route path="products/categories" element={<ProductCategories />} />
-          <Route path="products/allproducts" element={<Allproducts/>} />
+          <Route path="products" element={<Allproducts/>} />
           <Route path="products/brands" element={<ProductBrands />} />
           <Route path="adsandpromo" element={<HeroBanner />} />
           <Route path="adsandpromo/brands" element={<BrandPromo />} />
