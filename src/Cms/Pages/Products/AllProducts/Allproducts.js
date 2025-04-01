@@ -7,10 +7,12 @@ import exportIcon from "../../../Assets/icons/Export.svg";
 import deleteIcon from "../../../Assets/icons/delet.svg";
 import editIcon from "../../../Assets/icons/edit.svg";
 import deleteConf from "../../../Assets/icons/deleteModal.svg"
+import productImg from "../../../Assets/icons/Group 1261153314.png"
+import { Link } from "react-router-dom";
 
 const productsData = Array(8).fill({
   id: 652542,
-  image: "../../../Assets/images/product.png",
+  image: productImg,
   name: "Multivitamin Vitamin Healthkart Tablet",
   price: "AED 240",
   brand: "Cipla",
@@ -40,9 +42,11 @@ function Allproducts() {
           <button className="bg-white border border-[#D5D5D5] hover:border-[#8F8F8F] flex items-center font-normal text-sm px-4 py-3 rounded-lg mr-4">
             <img src={importIcon} className="mr-2 w-4 h-4" alt="" /> Import
           </button>
-          <button className="hover:bg-[#526EC3] flex items-center font-normal text-sm bg-[#304BA0] text-white px-4 py-3 rounded-lg">
-            <img src={addIcon} className="mr-2 w-4 h-4" alt="" /> Add Product
-          </button>
+         <Link to="/products/addproduct">
+            <button className="hover:bg-[#526EC3] flex items-center font-normal text-sm bg-[#304BA0] text-white px-4 py-3 rounded-lg">
+              <img src={addIcon} className="mr-2 w-4 h-4" alt="" /> Add Product
+            </button>
+         </Link>
         </div>
       </div>
 
@@ -70,49 +74,55 @@ function Allproducts() {
           </button>
         </div>
 
-        <div className=" mt-8">
-          <table className=" w-full">
-            <thead className="bg-[#F0F0F0] h-10 rounded-lg">
-              <tr className="bg-[#F0F0F0] h-[40px] text-left rounded-lg">
-                <th className="p-4">
-                  <input type="checkbox" />
-                </th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Product ID</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Image</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Product Detail</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Price</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Brand</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Category</th>
-                <th className="p-4 font-medium text-sm text-[#2F3139] ">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product, index) => (
-                <tr key={index} className="border-b text-sm">
-                  <td className="p-3">
-                    <input type="checkbox" />
-                  </td>
-                  <td className="p-3">{product.id}</td>
-                  <td className="p-3">
-                    <img src={product.image} alt="Product" className="w-10" />
-                  </td>
-                  <td className="p-3">{product.name}</td>
-                  <td className="p-3">{product.price}</td>
-                  <td className="p-3">{product.brand}</td>
-                  <td className="p-3">{product.category}</td>
-                  <td className="items-center justify-center py-5 flex space-x-2">
-                    <button onClick={() => handleDelete(product.id)}>
-                      <img src={deleteIcon} alt="Delete" className="w-5 h-5" />
-                    </button>
-                    <button>
-                      <img src={editIcon} alt="Edit" className="w-5 h-5" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div className=" mt-8 overflow-x-auto">
+  <table className="w-full text-left text-[14px] border  font-normal border-collapse">
+    <thead className="bg-[#F0F0F0] h-10 border-b">
+      <tr className="text-sm font-medium text-[#2F3139]">
+        <th className="px-4 py-2 w-10 rounded-tl-lg">
+          <input type="checkbox" />
+        </th>
+        <th className="px-4 font-medium text-[#2F3139]  py-2">Product ID</th>
+        <th className="px-4 font-medium text-[#2F3139] py-2">Image</th>
+        <th className="px-4 font-medium text-[#2F3139] py-2">Product Detail</th>
+        <th className="px-4 font-medium text-[#2F3139] py-2">Price</th>
+        <th className="px-4 font-medium text-[#2F3139] py-2">Brand</th>
+        <th className="px-4 font-medium text-[#2F3139] py-2">Category</th>
+        <th className="px-4 font-medium text-[#2F3139] rounded-tr-lg py-2 text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {products.map((product, index) => (
+        <tr
+          key={index}
+          className="border-b h-[56px] hover:bg-[#E6E6E7] text-sm"
+        >
+          <td className="px-4 py-2 w-10">
+            <input type="checkbox" />
+          </td>
+          <td className="px-4 py-2">{product.id}</td>
+          <td className="px-4 py-2">
+            <img src={product.image} alt="Product" className="w-12 h-12" />
+          </td>
+          <td className="px-4 py-2">{product.name}</td>
+          <td className="px-4 py-2">{product.price}</td>
+          <td className="px-4 py-2">{product.brand}</td>
+          <td className="px-4 py-2">{product.category}</td>
+          <td className="px-4 py-2 flex items-center justify-center space-x-2">
+            <button onClick={() => handleDelete(product.id)}>
+              <img src={deleteIcon} alt="Delete" className="w-[22px] h-[22px]" />
+            </button>
+            <Link to="/products/addproduct">
+              <button>
+                <img src={editIcon} alt="Edit" className="w-[22px] h-[22px]" />
+              </button>
+            </Link>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
       </div>
 
       {showDeleteModal && (

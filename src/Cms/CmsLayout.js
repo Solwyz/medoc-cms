@@ -9,7 +9,7 @@ function CmsLayout() {
     <Header/>
   <div className='flex'>
       <Sidebar/>
-      <div className='ml-[242px] bg-[#EFEFF5] h-screen w-full mt-[72px] px-6 py-[32px]'>  <Outlet /></div>
+      <div className='ml-[242px] bg-[#EFEFF5] min-h-screen w-full mt-[72px] px-6 py-[32px]'>  <Outlet /></div>
       </div>
     </div>
   )
