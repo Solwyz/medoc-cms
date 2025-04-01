@@ -233,7 +233,7 @@ const ProductBrands = () => {
                 value={newBrand}
                 onChange={(e) => setNewBrand(e.target.value)}
                 placeholder="Enter brand name"
-                className="border border-[#BDBDBD] focus:outline-none  rounded-lg p-2  w-full mt-2"
+                className="border border-[#BDBDBD] focus:outline-none  rounded-t-lg p-2  w-full mt-2"
               />
               <div className="flex justify-end mt-10">
                 <button
