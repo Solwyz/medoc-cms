@@ -102,7 +102,7 @@ function Allproducts() {
               {products.map((product, index) => (
                 <tr
                   key={index}
-                  className="border-b h-[56px]  items-center hover:bg-[#E6E6E7] text-sm"
+                  className="border-b h-[56px]  items-center hover:bg-[#F6F6F6] text-sm"
                 >
                   <td className="px-4 py-2 w-10">
                     <input type="checkbox" />
@@ -150,7 +150,7 @@ function Allproducts() {
             <img className="w-12 h-12" src={deleteConf} alt="" />
             <h1 className="mt-6 font-medium text-[16px]">Confirm Delete</h1>
             <h2 className="text-[14px] font-normal text-[#818180] mt-2">
-              Are you sure you want to delete this order?
+              Are you sure you want to delete this?
             </h2>
             <div className="flex  mt-4">
               <button
