@@ -141,7 +141,7 @@ function ProductCategories() {
             <img className="w-12 h-12" src={deleteConf} alt="" />
             <h1 className="mt-6 font-medium text-[16px]">Confirm Delete</h1>
             <h2 className="text-[14px] font-normal text-[#818180] mt-2">
-              Are you sure you want to delete this order?
+              Are you sure you want to delete this ?
             </h2>
             <div className="flex  mt-4">
               <button
@@ -167,7 +167,7 @@ function ProductCategories() {
             {/* Modal Header */}
             <div className="flex bg-[#DEE2EF] items-center px-6 h-[66px] justify-between">
               <h1 className="text-base text-[#180F32] font-medium">
-                Create new brand
+              Create new category
               </h1>
               <img
                 src={closeIcon}
