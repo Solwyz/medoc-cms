@@ -76,7 +76,7 @@ function Allproducts() {
 
         <div className=" mt-8 overflow-x-auto">
           <table className="w-full text-left text-[14px] border  font-normal border-collapse">
-            <thead className="bg-[#F0F0F0] h-10 border-b">
+            <thead className="bg-[#F0F0F0] h-10 border-b border-[#D6D6D6]">
               <tr className="text-sm font-medium text-[#2F3139]">
                 <th className="px-4 py-2 w-10 rounded-tl-lg">
                   <input type="checkbox" />

@@ -7,6 +7,7 @@ import deleteIcon from "../../../Assets/icons/delet.svg";
 import editIcon from "../../../Assets/icons/edit.svg";
 import deleteConf from "../../../Assets/icons/deleteModal.svg";
 import closeIcon from "../../../Assets/icons/close_icon.svg";
+import dropdownIcon from "../../../Assets/icons/arrow_back_ios.svg";
 
 const ProductBrands = () => {
   const [brands, setBrands] = useState([
@@ -97,7 +98,7 @@ const ProductBrands = () => {
           <img src={addIcon} alt="Add" className="mr-2" /> Add new brand
         </button>
       </div>
-      <div className="bg-white mt-6 p-6 w-full">
+      <div className="bg-white min-h-screen mt-6 p-6 w-full">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="relative w-[584px]">
@@ -123,7 +124,7 @@ const ProductBrands = () => {
 
         <div className=" mt-8 overflow-x-auto">
           <table className="w-full text-left text-[14px] border  font-normal border-collapse">
-            <thead className="bg-[#F0F0F0] h-10 border-b">
+            <thead className="bg-[#F0F0F0] h-10 border-b border-[#D6D6D6]">
               <tr className="text-sm font-medium text-[#2F3139]">
                 <th className="px-4 py-2 w-10 rounded-tl-lg">
                   <input type="checkbox" />
@@ -214,44 +215,93 @@ const ProductBrands = () => {
 
       {showAddBrand && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg w-96">
-            <div className="flex bg-[#DEE2EF] rounded-lg items-center px-6  h-[66px] justify-between">
-              <h1 className="text-base text-[#180F32] font-medium text-center">
-                Create new brand
-              </h1>
-              <img
-                src={closeIcon}
-                onClick={() => setShowAddBrand(false)}
-                className="w-6 h-6"
-                alt=""
-              />
-            </div>
-            <div className="p-6">
-            <label className="font-medium text-sm">Brand Name</label>
-              <input
-                type="text"
-                value={newBrand}
-                onChange={(e) => setNewBrand(e.target.value)}
-                placeholder="Enter brand name"
-                className="border border-[#BDBDBD] focus:outline-none  rounded-t-lg p-2  w-full mt-2"
-              />
-              <div className="flex justify-end mt-10">
-                <button
-                  onClick={() => setShowAddBrand(false)}
-                  className="px-4 py-2 border text-[#2C2B2B] font-normal text-base rounded-lg mr-2"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={addBrand}
-                  className="px-4 py-2 bg-[#6C55B2] font-normal text-white rounded-lg"
-                >
-                  Add Brand
-                </button>
-              </div>
-            </div>
+  <div className="bg-white  shadow-lg">
+    {/* Modal Header */}
+    <div className="flex bg-[#DEE2EF] items-center px-6 h-[66px] justify-between">
+      <h1 className="text-base text-[#180F32] font-medium">Create new brand</h1>
+      <img
+        src={closeIcon}
+        onClick={() => setShowAddBrand(false)}
+        className="w-6 h-6 cursor-pointer hover:bg-white"
+        alt="Close"
+      />
+    </div>
+
+    {/* Modal Body */}
+    <div className="p-6">
+      <div className="flex space-x-6 ">
+        {/* Brand Name Input */}
+        <div className="w-[269px]">
+          <label className="font-normal text-sm block mb-2">Select Brand</label>
+          <input
+            type="text"
+            value={newBrand}
+            onChange={(e) => setNewBrand(e.target.value)}
+            placeholder="Enter brand name"
+            className="border border-[#BDBDBD] focus:outline-none rounded-lg px-4 h-[48px] w-full"
+          />
+        </div>
+
+        {/* Category Dropdown */}
+        <div className="w-[269px]">
+          <label className="font-normal text-sm block mb-2">Select Category</label>
+          <div className="relative">
+            <select className="border border-[#BDBDBD] font-normal focus:outline-[#75689C] px-4 h-[48px] w-full rounded-lg appearance-none">
+            <option value="" disabled hidden>Select a category</option>
+              <option>Beauty</option>
+              <option>Health</option>
+            </select>
+            <img src={dropdownIcon} className="absolute right-3 top-4 w-4 h-4" alt="Dropdown" />
           </div>
         </div>
+      </div>
+
+      {/* Child & Sub Category */}
+      <div className="flex space-x-6 mt-4">
+        <div className="w-[269px]">
+          <label className="font-normal text-sm block mb-2">Child Category</label>
+          <div className="relative">
+            <select className="border border-[#BDBDBD] font-normal focus:outline-[#75689C] px-4 h-[48px] w-full rounded-lg appearance-none">
+            <option value="" disabled hidden>Select a category</option>
+              <option>Beauty</option>
+              <option>Health</option>
+            </select>
+            <img src={dropdownIcon} className="absolute right-3 top-4 w-4 h-4" alt="Dropdown" />
+          </div>
+        </div>
+
+        <div className="w-[269px]">
+          <label className="font-normal text-sm block mb-2">Sub Category</label>
+          <div className="relative">
+            <select className="border border-[#BDBDBD] font-normal focus:outline-[#75689C] px-4 h-[48px] w-full rounded-lg appearance-none">
+            <option value="" disabled hidden>Select a category</option>
+              <option>Beauty</option>
+              <option>Health</option>
+            </select>
+            <img src={dropdownIcon} className="absolute right-3 top-4 w-4 h-4" alt="Dropdown" />
+          </div>
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex justify-end mt-[56px]">
+        <button
+          onClick={() => setShowAddBrand(false)}
+          className="px-4 py-2 border text-[#2C2B2B] font-normal text-base rounded-lg mr-2"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={addBrand}
+          className="px-4 py-2 bg-[#6C55B2] font-normal text-white rounded-lg"
+        >
+          Add Brand
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
       )}
     </div>
   );
