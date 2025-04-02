@@ -93,7 +93,7 @@ function Allproducts() {
                 <th className="px-4 font-medium text-[#2F3139] py-2">
                   Category
                 </th>
-                <th className="px-4 font-medium text-[#2F3139] rounded-tr-lg py-2 text-center">
+                <th className="px-4 font-medium text-[#2F3139] rounded-tr-lg py-2 ">
                   Action
                 </th>
               </tr>
@@ -102,7 +102,7 @@ function Allproducts() {
               {products.map((product, index) => (
                 <tr
                   key={index}
-                  className="border-b h-[56px] hover:bg-[#E6E6E7] text-sm"
+                  className="border-b h-[56px]  items-center hover:bg-[#E6E6E7] text-sm"
                 >
                   <td className="px-4 py-2 w-10">
                     <input type="checkbox" />
@@ -119,8 +119,8 @@ function Allproducts() {
                   <td className="px-4 py-2">{product.price}</td>
                   <td className="px-4 py-2">{product.brand}</td>
                   <td className="px-4 py-2">{product.category}</td>
-                  <td className="px-4 py-2 flex items-center justify-center space-x-2">
-                    <button onClick={() => handleDelete(product.id)}>
+                  <td className="px-4 py-2  items-center">
+                    <button className="mr-2" onClick={() => handleDelete(product.id)}>
                       <img
                         src={deleteIcon}
                         alt="Delete"

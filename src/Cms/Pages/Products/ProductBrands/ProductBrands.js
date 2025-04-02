@@ -163,8 +163,8 @@ const ProductBrands = () => {
                   <td className="px-4 py-2">{brand.category}</td>
                   <td className="px-4 py-2">{brand.childCategory}</td>
                   <td className="px-4 py-2">{brand.subCategory}</td>
-                  <td className="px-4 py-2 flex items-center justify-center space-x-2">
-                    <button onClick={() => handleDelete(brand.id)}>
+                  <td className="px-4 py-2 ">
+                    <button className="mr-2" onClick={() => handleDelete(brand.id)}>
                       <img
                         src={deleteIcon}
                         alt="Delete"
