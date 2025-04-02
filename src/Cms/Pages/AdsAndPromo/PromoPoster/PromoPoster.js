@@ -50,7 +50,7 @@ function PromoPoster() {
           </thead>
           <tbody>
             {[1, 2, 3, 4, 5].map((num) => (
-              <tr key={num} className="border-b border-[#E6E6E7] h-[71px] text-sm">
+              <tr key={num} className="border-b border-[#E6E6E7] hover:bg-[#F6F6F6] h-[71px] text-sm">
                 <td className="px-4 py-2">{num}</td>
                 <td className="px-4 py-2">
                   {images[num] ? (
