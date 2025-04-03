@@ -13,8 +13,8 @@ function MicroProductCategories() {
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [categories, setCategories] = useState([
-    { id: 1, name: "Electronics", childCategory: 2, products: 10 },
-    { id: 2, name: "Clothing", childCategory: 3, products: 15 },
+    { id: 1, name: "Electronics", microCategory: 2, products: 10 },
+    { id: 2, name: "Clothing", microCategory: 3, products: 15 },
   ]);
   const [categoryToDelete, setCategoryToDelete] = useState(null);
 
@@ -34,7 +34,7 @@ function MicroProductCategories() {
     const newCategory = {
       id: categories.length + 1,
       name: "New Category",
-      childCategory: 0,
+      microCategory: 0,
       products: 0,
     };
     setCategories([...categories, newCategory]);
@@ -48,13 +48,21 @@ function MicroProductCategories() {
           <span>
             <img src={nextIcon} className="px-2" alt="" />
           </span>
-          Child Category
+          <p className="text-[#A2A2A2]">Child Category</p>
+          <span>
+            <img src={nextIcon} className="px-2" alt="" />
+          </span>
+          <p className="text-[#A2A2A2]">Sub Category</p>
+          <span>
+            <img src={nextIcon} className="px-2" alt="" />
+          </span>
+          Micro Category
         </div>
         <button
           className="hover:bg-[#526EC3] flex items-center font-normal text-sm bg-[#304BA0] text-white px-4 py-3 rounded-lg"
           onClick={() => setShowAddCategory(true)}
         >
-          <img src={addIcon} alt="Add" className="mr-2" /> Add Category
+          <img src={addIcon} alt="Add" className="mr-2" /> Add Micro Category
         </button>
       </div>
       <div className="bg-white min-h-screen mt-6 p-6 w-full">
@@ -92,11 +100,9 @@ function MicroProductCategories() {
                   Category ID
                 </th>
                 <th className="px-4 font-medium text-[#2F3139]  py-2">
-                  Child Category Name
+                  Product Name
                 </th>
-                <th className="px-4 font-medium text-[#2F3139]  py-2">
-                  Number of sub categories
-                </th>
+               
                 <th className="px-4 font-medium text-[#2F3139]  py-2">
                   Number of products
                 </th>
@@ -117,7 +123,6 @@ function MicroProductCategories() {
                   </td>
                   <td className="px-4 py-2">{category.id}</td>
                   <td className="px-4 py-2">{category.name}</td>
-                  <td className="px-4 py-2">{category.childCategory}</td>
                   <td className="px-4 py-2">{category.products}</td>
                   <td className="px-4 py-2 ">
                     <button
@@ -178,7 +183,7 @@ function MicroProductCategories() {
             {/* Modal Header */}
             <div className="flex bg-[#DEE2EF] items-center px-6 h-[66px] justify-between">
               <h1 className="text-base text-[#180F32] font-medium">
-                Create new child category
+                Create new micro category
               </h1>
               <img
                 src={closeIcon}
