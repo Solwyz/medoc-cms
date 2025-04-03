@@ -51,7 +51,7 @@ function LoginPage() {
             <form onSubmit={handleSubmit}>
               <div className="mt-[72px]">
                 <label className="block text-base font-normal text-[#0C1421] font-Popins">
-                  User name
+                 Phone Number
                 </label>
                 <input
                   type="text"
@@ -82,9 +82,9 @@ function LoginPage() {
 
               <div className="flex justify-between items-center mt-4">
                 <div className="flex-grow"></div>
-                <Link to="/forgot" className="text-sm text-[#1E4AE9] font-normal font-Popins">
+                <span  className="text-sm text-[#1E4AE9] font-normal font-Popins">
                   Forgot Password?
-                </Link>
+                </span>
               </div>
 
               <button
@@ -99,7 +99,7 @@ function LoginPage() {
 
               <div className="mt-10 text-center">
                 <p className="text-sm font-Popins font-normal text-[#313957]">
-                  Don’t have an account? <Link to="/signup" className="text-[#1E4AE9] font-Popins font-normal text-sm">Sign Up</Link>
+                  Don’t have an account? <span  className="text-[#1E4AE9] font-Popins font-normal text-sm">Sign Up</span>
                 </p>
               </div>
             </form>
