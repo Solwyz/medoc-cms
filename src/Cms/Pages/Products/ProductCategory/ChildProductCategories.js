@@ -54,7 +54,7 @@ function ChildProductCategories() {
           className="hover:bg-[#526EC3] flex items-center font-normal text-sm bg-[#304BA0] text-white px-4 py-3 rounded-lg"
           onClick={() => setShowAddCategory(true)}
         >
-          <img src={addIcon} alt="Add" className="mr-2" /> Add Category
+          <img src={addIcon} alt="Add" className="mr-2" /> Add Child Category
         </button>
       </div>
       <div className="bg-white min-h-screen mt-6 p-6 w-full">
